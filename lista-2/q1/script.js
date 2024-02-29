@@ -1,5 +1,15 @@
 var vet=[3,5,7,3,8,9,1];
 
-var dobro = n => {n*n};
+var dobro = n => console.log(n*n);
 
-vet.forEach((e) => console.log(dobro(e)))
+console.log("Usando forEach:")
+vet.forEach((s) => dobro(s));
+
+console.log("Usando o for:")
+for (var i = 0; i < vet.length; i++) {
+    dobro(vet[i]);
+}
+
+console.log("Usando map:")
+vet.map((e) => dobro(e));
+console.log(vet);
