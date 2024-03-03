@@ -1,0 +1,2 @@
+vet1 = ['Arrays', 'são', 'coleções', 'de', 'elementos', 'indexadas', 'por', 'inteiros', 'começando', 'por', '0'];
+console.log(vet1.join(' ')); // Arrays são coleções de elementos indexadas por inteiros começando por 0
