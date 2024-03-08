@@ -1,0 +1,10 @@
+{
+    "nome": "Luan",
+    "idade": 23,
+    "esta_trabalhando": false,
+    "personalidade": {
+        "primeira":"Passivo",
+        "segunda":"agresivo"
+    },
+    "hobbies": ["criticar o capitalismo", "comer", "lacrar"]
+}
