@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Herança é um conceito que permite que uma classe herde propriedades e métodos de outra classe.
+    </h1>
+
+    <script>
+        class Pessoa {
+            constructor(nome, telefone, email) {
+                this.nome = nome;
+                this.telefone = telefone;
+                this.email = email;
+            }
+
+            falar() {
+                console.log(`${this.nome} esta falando`);
+            }
+
+            andar() {
+                console.log(`${this.nome} esta andando`);
+            }
+        }
+
+        class PessoaFisica extends Pessoa {
+            constructor(nome, telefone, email, cpf) {
+                super(nome, telefone, email);
+                this.cpf = cpf;
+            }
+        }
+
+        class PessoaJuridica extends Pessoa {
+            constructor(nome, telefone, email, cnpj) {
+                super(nome, telefone, email);
+                this.cnpj = cnpj;
+            }
+
+            pagarSalarios () {
+                super.andar();
+                console.log(`${this.nome} esta pagando salarios`);                  
+            }
+        }
+
+        let pessoaFisica = new PessoaFisica("Dicaprio", "123456789", "dicaprio@gmail.com", "123456789");
+        pessoaFisica.falar();
+        console.log(pessoaFisica.cpf, pessoaFisica.nome);
+
+        let pessoaJuridica = new PessoaJuridica("Leo", "123456789", "leo@mail.com", "1113264597");
+        pessoaJuridica.pagarSalarios();
+        console.log(pessoaJuridica.cnpj, pessoaJuridica.nome);
+    </script>
+</body>
+</html>
