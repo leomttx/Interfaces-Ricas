@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Getters e Setters são métodos que permitem que você defina o valor de uma propriedade e o obtenha.
+    </h1>
+    <script>
+        class Pessoa {
+            nome;
+
+            get userName () {
+                return this.kebabCase(this.nome);
+            }
+
+            set setNome (nome_param) { // O set precisa de um parametro
+
+                if (!nome_param) { // Se o nome não for passado, o set não define o valor da propriedade nome
+                    throw new Error("O nome é obrigatório")
+                }
+                this.nome = nome_param;
+
+                if (this.veroficaCaracteresEspeciais(nome_param)) {
+                    throw new Error("O nome não pode conter caracteres especiais")
+                }
+                
+            }
+
+            veroficaCaracteresEspeciais (nome) {
+                let regex = /[!@#$%^&*(),.?":{}|<>]/g;
+                return regex.test(nome);
+            }
+
+            kebabCase (nome) {
+                return nome
+                .replace(/([a-z])([A-Z])/g, '$1-$2')
+                .replace(/[\s_]+/g, '-')
+                .toLowerCase();
+            }
+        }
+
+        let pessoa = new Pessoa();
+        pessoa.setNome = "Dicaprio leo"; // O set definiu o valor da propriedade nome
+        console.log(pessoa.userName) // O get obteve o valor da propriedade nome
+
+    </script>
+</body>
+</html>
