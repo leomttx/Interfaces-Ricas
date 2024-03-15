@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Atributos e métodos privados são acessíveis apenas dentro da classe onde foram declarados.
+    </h1>
+
+    <script>
+        class Inposto {
+            constructor(nome, salario) {
+                this.nome = nome;
+                this.salario = salario;
+            }
+
+            #porcentagemInposto = 0.20;
+
+            #calculaInposto() { // método privado
+                return this.salario * this.#porcentagemInposto;
+            }
+
+            obterSalarioLiquido() {
+                return this.salario - this.#calculaInposto();
+            }
+        }
+
+        let pessoa1 = new Inposto("Dicaprio", 1000);
+        console.log(`O salario liquido de ${pessoa1.nome} é ${pessoa1.obterSalarioLiquido()}`)
+    </script>
+</body>
+</html>
