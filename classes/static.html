@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        static é um modificador que permite que um método ou atributo seja acessível sem que seja necessário instanciar a classe.
+    </h1>
+
+    <script>
+        class utils {
+            static linguagemDoSistema = "pt-br";
+
+            static obterDataProximoMes() {
+                let dataAtual = new Date();
+                let data;
+
+                if (dataAtual.getMonth() === 11) {
+                    data = new Date(dataAtual.getFullYear() + 1, 0, dataAtual.getDate());
+                } else {
+                    data = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, dataAtual.getDate());
+                }
+
+                return data.toLocaleDateString(this.linguagemDoSistema); 
+            }
+        }
+
+        console.log(` O proximo mes é ${utils.obterDataProximoMes()}`)
+        console.log(` A linguagem do sistema é ${utils.linguagemDoSistema}`)
+    </script>
+</body>
+</html>
