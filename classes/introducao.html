@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Pedido {
+            constructor(data, itens, valor) {
+                this.data = data;
+                this.itens = itens;
+                this.valor = valor;
+            }
+
+            metodo() {
+                console.log('Isso aqui é um método, fi')
+            }
+        }
+
+        let pedido = new Pedido(new Date, ['item1', 'item2'], 100);
+        console.log(pedido);
+
+        console.log(`o valor do pedido é ${pedido.valor}`)
+        pedido.metodo();
+    </script>
+</body>
+</html>
